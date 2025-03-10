@@ -7,12 +7,24 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <p>
-        Days: <span id="days">0</span> Hours: <span id="hours">0</span> Minutes:
-        <span id="minutes">0</span> Seconds: <span id="seconds">0</span>
-      </p>
+    <div class="full-game-container">
+      <div class="top-page-container">
+        <div class="account-balance-container">
+          Account Balance: $<span id="account-balance"></span>
+        </div>
+        <div class="greeting-container">
+          <span id="greeting">Good Morning</span>,
+          <span id="username">Marr-fee</span>
+        </div>
+        <div class="time-container">
+          <p>
+            <span id="days"></span> <span id="hours"></span>:
+            <span id="minutes"></span>
+          </p>
+        </div>
+      </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

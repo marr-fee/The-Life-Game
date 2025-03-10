@@ -4,16 +4,29 @@
   box-sizing: border-box;
 }
 
-.container{
-  margin: 25px auto;
-  text-align: center;
-}
-
-p{
-  font-size: 25px;
+.time-container{
+  font-size: 11px;
 }
 
 span{
   font-weight: bold;
-  margin-right: 15px;
+  margin-right: 5px;
+}
+
+.full-game-container{
+  background-color: rgb(8, 8, 8);
+  background-image: linear-gradient(190deg, rgb(29, 29, 29), rgb(15, 15, 15));
+  color: antiquewhite;
+  margin: 20px auto;
+  width: 760px;
+  max-width: 100%;
+  height: 600px;
+}
+
+.top-page-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
 }
