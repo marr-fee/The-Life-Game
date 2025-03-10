@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div id="user-info">
+      <input type="text" placeholder="Enter Your Name" class="username" />
+      <button class="submit-user-info-btn">Submit</button>
+    </div>
+
     <div class="full-game-container">
       <div class="top-page-container">
         <div class="account-balance-container">
@@ -14,7 +19,7 @@
         </div>
         <div class="greeting-container">
           <span id="greeting">Good Morning</span>,
-          <span id="username">Marr-fee</span>
+          <span id="username"></span>
         </div>
         <div class="time-container">
           <p>
@@ -22,6 +27,78 @@
             <span id="minutes"></span>
           </p>
         </div>
+      </div>
+      <div class="game-menu-grid-container">
+        <div class="menu-grid-items">MY HOME</div>
+        <div class="menu-grid-items">STATS</div>
+        <div class="menu-grid-items">EMAILS</div>
+        <div class="menu-grid-items">LOCATIONS</div>
+        <div class="menu-grid-items">PHONE</div>
+        <div class="menu-grid-items">OPTIONS</div>
+      </div>
+
+      <div class="game-home-menu-grid-container">
+        <div class="menu-grid-items">MAIN MENU</div>
+        <div class="menu-grid-items">HOSPITAL</div>
+        <div class="menu-grid-items">CASINO</div>
+        <div class="menu-grid-items">BANK</div>
+        <div class="menu-grid-items">SCHOOL</div>
+        <div class="menu-grid-items">CHURCH</div>
+        <div class="menu-grid-items">STREETS</div>
+        <div class="menu-grid-items">PARK</div>
+        <div class="menu-grid-items">GOVERNMENT HOUSE</div>
+        <div class="menu-grid-items">WORK</div>
+        <div class="menu-grid-items">POLICE STATION</div>
+        <div class="menu-grid-items">GYM</div>
+        <div class="menu-grid-items">NIGHT CLUB / BAR</div>
+        <div class="menu-grid-items">HOTEL</div>
+        <div class="menu-grid-items">TRAVEL AGENCY</div>
+        <div class="menu-grid-items">CAR DEALERSHIP</div>
+        <div class="menu-grid-items">MILITARY BASE</div>
+        <div class="menu-grid-items">SUPERMARKET</div>
+        <div class="menu-grid-items">ART GALLERY</div>
+        <div class="menu-grid-items">FURNITURE STORE</div>
+        <div class="menu-grid-items">REAL ESTATE</div>
+      </div>
+
+      <div class="phone-menu-grid-container">
+        <div class="menu-grid-items">CONTACTS</div>
+        <div class="menu-grid-items">INVESTMENT</div>
+        <div class="menu-grid-items">ONLINE CASINO</div>
+        <div class="menu-grid-items">ONLINE BANK</div>
+        <div class="menu-grid-items">PLAY GAMES</div>
+        <div class="menu-grid-items">TEXT MESSAGES</div>
+      </div>
+
+      <div class="casino-grid-container">
+        <div class="casino-grid-item">GUE$$ THE NUMBER</div>
+      </div>
+
+      <div class="guessing-game-container">
+        <h1>Lorem, ipsum dolor</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error
+          accusantium dolorum saepe qui eos, laborum velit. Neque, est!
+          Voluptatum.
+        </p>
+        <div class="divider"></div>
+        <label for="player-bet">How Much would you like to bet?: </label>
+        <input type="number" min="5" max="100" id="player-bet" />
+        <div class="divider"></div>
+        <label for="player-number"
+          >Please guess the hidden number (1 - 100):
+        </label>
+        <input type="number" id="player-number" min="1" max="100" />
+        <div class="divider"></div>
+        <p class="outcome-message"></p>
+        <button
+          class="play-game"
+          onclick="
+        playBetting(Number(getPlayerNumber.value));
+        "
+        >
+          Play
+        </button>
       </div>
     </div>
 

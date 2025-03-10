@@ -1,3 +1,23 @@
+// Collect and use user's preferred username
+// -------------------------------------------
+
+let getUserName = document.querySelector('.username');
+
+let submitUserNameBtn = document.querySelector('.submit-user-info-btn');
+
+let updateUserName = document.getElementById('username');
+
+submitUserNameBtn.addEventListener('click', () => {
+  updateUserName.innerHTML = getUserName.value;
+  getUserName.value = '';
+})
+
+// -------------------------------------------
+
+
+// Set and modify time loop
+// -------------------------------------------
+
 const daysList = ['SUN','MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 const monthsList = ['January', 'February', 'March',
@@ -24,6 +44,7 @@ let updateMinutes = document.getElementById('minutes');
 let updateHours = document.getElementById('hours');
 let updateDays = document.getElementById('days');
 let updateGreeting = document.getElementById('greeting');
+
 
 const timeLoop = setInterval(() => {
   minutes++;
@@ -68,7 +89,7 @@ const timeLoop = setInterval(() => {
    // console.log(currentYear);
   }
 
-  
+
 
 // Format hours, minutes, and days to always show two digits
 const formattedHours = String(hours).padStart(2, '0');
@@ -88,60 +109,77 @@ updateDays.innerHTML = currentDay;
   }
 }, 1000);
 
-
-
-
-/*
+// -------------------------------------------
 
 
 let accountBalance = 1000;
-let hygineLevel = 90;
-let stomachLevel = 90;
-let faithLevel = 50;
-let investments = 0;
-let restLevel = 80;
-let popularity = 0;
-let socialLife = 0;
-let selfConfidence = 0;
-let numberOfFriends = 0;
-let criminality = 0;
-let relationshipStatus = 'single';
-let employmentStatus = 'unemployed';
-let workXp = 0;
-let foodItems = 0;
-let beautyProducts = 0;
-let houseRent = 0;
+//let hygineLevel = 90;
+//let stomachLevel = 90;
+//let faithLevel = 50;
+//let investments = 0;
+//let restLevel = 80;
+//let popularity = 0;
+//let socialLife = 0;
+//let selfConfidence = 0;
+//let numberOfFriends = 0;
+//let criminality = 0;
+//let relationshipStatus = 'single';
+//let employmentStatus = 'unemployed';
+//let workXp = 0;
+//let foodItems = 0;
+//let beautyProducts = 0;
+//let houseRent = 0;
 
+// Set up betting feature
+// -------------------------------------------------------
+
+let updateAccountBalance = document.getElementById('account-balance');
+updateAccountBalance.innerText = accountBalance;
 
 // gambling scenerio
 tries = 0;
+let getPlayerBet = document.getElementById('player-bet');
+let getPlayerNumber = document.getElementById('player-number');
+let updateOutcomeMessage = document.querySelector('.outcome-message');
 
-while (tries <= 20) {
-  function playBetting() {
-    playerGuess = 32;
-    bet = 20;
+let winnings = 0;
+
+console.log(winnings);
+
+
+while (tries <= 1) {
+  function playBetting(playerNumber) {
+    
+    bet = Number(getPlayerBet.value);
+    accountBalance-= bet;
+    updateAccountBalance.innerText = accountBalance;
+    console.log(Number(getPlayerNumber.value));
+
+    
     randomNumber = Math.floor(Math.random() * 100) + 1;
-    if (playerGuess === randomNumber) {
-      console.log('You win!')
+    if (playerNumber === randomNumber) {
+      winnings+= 100;
+      updateOutcomeMessage.innerHTML = `You have won $${winnings}`
       accountBalance += 100;
-      faithLevel++;
-      selfConfidence++;
+     // faithLevel++;
+     // selfConfidence++;
       return true;
     }
     else{
-      accountBalance -= bet;
-      faithLevel--; 
-      selfConfidence--;
+      updateOutcomeMessage.innerText = `Not quite! better luck next time.`;
+     // faithLevel--; 
+     // selfConfidence--;
       
     }
-    console.log(randomNumber);
-    console.log(faithLevel);
-    console.log(selfConfidence);
+   // console.log(randomNumber);
+   // console.log(faithLevel);
+   // console.log(selfConfidence);
   }
-  playBetting();
 
-  console.log(accountBalance);
   tries++;
-}  */
-  
+}  
+
+// -------------------------------------------------------
+
 //console.log(currentMonth);
+

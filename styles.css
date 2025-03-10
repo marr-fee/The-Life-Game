@@ -20,7 +20,10 @@ span{
   margin: 20px auto;
   width: 760px;
   max-width: 100%;
-  height: 600px;
+  min-height: 600px;
+  height: 100vh; /* change back to 100vh*/
+  position: relative;
+  
 }
 
 .top-page-container{
@@ -28,5 +31,107 @@ span{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
+}
+
+.game-menu-grid-container{
+  background-color: aqua;
+  color: black;
+  border: 3px solid grey;
+  width: 80%;
+  min-height: 70vh;
+  padding: 20px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.menu-grid-items, .casino-grid-item{
+  width: 150px;
+  height: 200px;
+  border: 2px solid grey;
+  margin: 10px auto;
+  position: relative;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.menu-grid-items:hover, .casino-grid-item:hover{
+  background-color: rgb(63, 60, 60);
+  cursor: pointer;
+}
+
+.game-home-menu-grid-container{
+  border: 3px solid grey;
+  background-color: blue;
+  width: 80%;
+  height: 80%;
+  min-height: 70vh;
+  padding: 20px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  overflow: scroll;
+}
+
+.phone-menu-grid-container{
+  background-color: blueviolet;
+  border: 3px solid grey;
+  width: 80%;
+  height: 80%;
+  min-height: 70vh;
+  padding: 20px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  overflow: scroll;
+}
+
+.casino-grid-container{
+  background-color: aquamarine;
+  color: black;
+  border: 3px solid grey;
+  width: 80%;
+  height: 80%;
+  min-height: 70vh;
+  padding: 20px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  overflow: scroll;
+}
+
+.guessing-game-container{
+  background-color: aliceblue;
+  color: black;
+  width: 80%;
+  height: 80%;
+  height: 70vh;
+  min-height: 70vh;
+  padding: 20px;
+  margin: 35px auto;
+  text-align: center;
+}
+
+.divider{
+  border-bottom: 1px solid black;
+  margin: 30px auto;
+}
+ 
+.play-game{
+  width: 40%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: brown;
+  background-color: blueviolet;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
