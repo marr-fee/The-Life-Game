@@ -4,23 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Life Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="user-info">
+    <div id="user-info" class="user-info-container">
       <input type="text" placeholder="Enter Your Name" class="username" />
       <button class="submit-user-info-btn">Submit</button>
     </div>
 
     <div class="full-game-container">
       <div class="top-page-container">
+        <!--ACCOUNT BALANCE-->
         <div class="account-balance-container">
           Account Balance: $<span id="account-balance"></span>
         </div>
+        <!--GREETING AND USERNAME-->
         <div class="greeting-container">
           <span id="greeting">Good Morning</span>,
           <span id="username"></span>
         </div>
+        <!--TIME-->
         <div class="time-container">
           <p>
             <span id="days"></span> <span id="hours"></span>:
@@ -28,53 +37,253 @@
           </p>
         </div>
       </div>
-      <div class="game-menu-grid-container">
-        <div class="menu-grid-items">MY HOME</div>
-        <div class="menu-grid-items">STATS</div>
-        <div class="menu-grid-items">EMAILS</div>
-        <div class="menu-grid-items">LOCATIONS</div>
-        <div class="menu-grid-items">PHONE</div>
-        <div class="menu-grid-items">OPTIONS</div>
+
+      <!--MAIN MENU-->
+      <div class="main-menu-grid-container main-menu" id="main-menu-block">
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-home-48.png" />
+            <figcaption>MY HOME</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-bar-chart-48.png" />
+            <figcaption>STATS</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-email-48.png" />
+            <figcaption>EMAILS</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items" id="locations">
+          <figure class="icons">
+            <img src="images\icons8-location-100.png" />
+            <figcaption>LOCATIONS</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items" id="phone">
+          <figure class="icons">
+            <img src="images\icons8-phone-48.png" />
+            <figcaption>PHONE</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-options-100.png" />
+            <figcaption>OPTIONS</figcaption>
+          </figure>
+        </div>
       </div>
 
-      <div class="game-home-menu-grid-container">
-        <div class="menu-grid-items">MAIN MENU</div>
-        <div class="menu-grid-items">HOSPITAL</div>
-        <div class="menu-grid-items">CASINO</div>
-        <div class="menu-grid-items">BANK</div>
-        <div class="menu-grid-items">SCHOOL</div>
-        <div class="menu-grid-items">CHURCH</div>
-        <div class="menu-grid-items">STREETS</div>
-        <div class="menu-grid-items">PARK</div>
-        <div class="menu-grid-items">GOVERNMENT HOUSE</div>
-        <div class="menu-grid-items">WORK</div>
-        <div class="menu-grid-items">POLICE STATION</div>
-        <div class="menu-grid-items">GYM</div>
-        <div class="menu-grid-items">NIGHT CLUB / BAR</div>
-        <div class="menu-grid-items">HOTEL</div>
-        <div class="menu-grid-items">TRAVEL AGENCY</div>
-        <div class="menu-grid-items">CAR DEALERSHIP</div>
-        <div class="menu-grid-items">MILITARY BASE</div>
-        <div class="menu-grid-items">SUPERMARKET</div>
-        <div class="menu-grid-items">ART GALLERY</div>
-        <div class="menu-grid-items">FURNITURE STORE</div>
-        <div class="menu-grid-items">REAL ESTATE</div>
+      <!--LOCATIONS MENU-->
+      <div
+        class="locations-grid-container location-menu inactive-menu"
+        id="locations-menu-block"
+      >
+        <div class="menu-grid-items" id="main-menu">
+          <figure class="icons">
+            <img src="images\icons8-return-100.png" />
+            <figcaption>MAIN MENU</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-hospital-48.png" />
+            <figcaption>HOSPITAL</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items" id="casino">
+          <figure class="icons">
+            <img src="images\icons8-casino-48.png" />
+            <figcaption>CASINO</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-bank-48.png" />
+            <figcaption>BANK</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-school-48.png" />
+            <figcaption>SCHOOL</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-church-48.png" />
+            <figcaption>CHURCH</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-streets-80.png" />
+            <figcaption>STREETS</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-park-50.png" />
+            <figcaption>PARK</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-government-80.png" />
+            <figcaption>GOVERNMENT HOUSE</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-work-100.png" />
+            <figcaption>WORK</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-police-station-64.png" />
+            <figcaption>POLICE STATION</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-woman-lifting-weights-48.png" />
+            <figcaption>GYM</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-night-club-64.png" />
+            <figcaption>NIGHT CLUB / BAR</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-hotel-48.png" />
+            <figcaption>HOTEL</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-airport-50.png" />
+            <figcaption>AIRPORT</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-car-sale-48.png" />
+            <figcaption>CAR DEALERSHIP</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-military-base-64.png" />
+            <figcaption>MILITARY BASE</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-supermarket-50.png" />
+            <figcaption>SUPERMARKET</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-art-50.png" />
+            <figcaption>ART GALLERY</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-furniture-50.png" />
+            <figcaption>FURNITURE STORE</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-real-estate-50.png" />
+            <figcaption>REAL ESTATE</figcaption>
+          </figure>
+        </div>
       </div>
 
-      <div class="phone-menu-grid-container">
-        <div class="menu-grid-items">CONTACTS</div>
-        <div class="menu-grid-items">INVESTMENT</div>
-        <div class="menu-grid-items">ONLINE CASINO</div>
-        <div class="menu-grid-items">ONLINE BANK</div>
-        <div class="menu-grid-items">PLAY GAMES</div>
-        <div class="menu-grid-items">TEXT MESSAGES</div>
+      <!--PHONE MENU-->
+      <div
+        class="phone-menu-grid-container phone-menu inactive-menu"
+        id="phone-menu-block"
+      >
+        <div class="menu-grid-items return-to-main-menu">
+          <figure class="icons">
+            <img src="images\icons8-return-100.png" />
+            <figcaption>MAIN MENU</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-contact-64.png" />
+            <figcaption>CONTACTS</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-investment-50.png" />
+            <figcaption>INVESTMENT</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-casino-48.png" />
+            <figcaption>ONLINE CASINO</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-bank-48.png" />
+            <figcaption>ONLINE BANK</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-games-50.png" />
+            <figcaption>PLAY GAMES</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items">
+          <figure class="icons">
+            <img src="images\icons8-text-message-80.png" />
+            <figcaption>TEXT MESSAGES</figcaption>
+          </figure>
+        </div>
       </div>
 
-      <div class="casino-grid-container">
-        <div class="casino-grid-item">GUE$$ THE NUMBER</div>
+      <!--GUESS NUMBER CASINO GAME MENU-->
+      <div
+        class="casino-grid-container casino-menu inactive-menu"
+        id="casino-menu-block"
+      >
+        <div class="menu-grid-items return-to-main-menu">
+          <figure class="icons">
+            <img src="images\icons8-return-100.png" />
+            <figcaption>MAIN MENU</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items" id="guess-number-game">
+          <figure class="icons">
+            <img src="images\icons8-numbers-48.png" />
+            <figcaption>GUE$$ THE NUMBER</figcaption>
+          </figure>
+        </div>
       </div>
 
-      <div class="guessing-game-container">
+      <!--GUESS THE NUMBER GAME-->
+      <div
+        class="guessing-game-container guessing-game inactive-menu"
+        id="guessing-game-block"
+      >
         <h1>Lorem, ipsum dolor</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error

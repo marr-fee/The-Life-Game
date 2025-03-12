@@ -15,15 +15,17 @@ span{
 
 .full-game-container{
   background-color: rgb(8, 8, 8);
-  background-image: linear-gradient(190deg, rgb(29, 29, 29), rgb(15, 15, 15));
   color: antiquewhite;
-  margin: 20px auto;
-  width: 760px;
+  margin: 25px auto;
+  padding: 20px;
+  width: 660px;
   max-width: 100%;
-  min-height: 600px;
-  height: 100vh; /* change back to 100vh*/
-  position: relative;
-  
+  height: 500px;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .top-page-container{
@@ -32,106 +34,96 @@ span{
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  position: absolute;
+  top: 0;
 }
 
-.game-menu-grid-container{
-  background-color: aqua;
+.main-menu-grid-container, .locations-grid-container, .casino-grid-container, .phone-menu-grid-container{
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  background-color: rgb(44, 41, 41);
   color: black;
-  border: 3px solid grey;
+  border: 3px solid gainsboro;
   width: 80%;
-  min-height: 70vh;
-  padding: 20px;
-  margin: 35px auto;
+  height: 80%;
+  padding: 30px 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-template-columns: repeat(3, 140px);
   gap: 15px;
+  position: absolute;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
-.menu-grid-items, .casino-grid-item{
-  width: 150px;
-  height: 200px;
-  border: 2px solid grey;
-  margin: 10px auto;
-  position: relative;
+.menu-grid-items{
+  width: 80%;
+  height: 100px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  background-color: rgb(185, 182, 182);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
   display: flex;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-
-
+  align-items: center;
+  padding: 10px;
+  position: relative;
 }
-.menu-grid-items:hover, .casino-grid-item:hover{
-  background-color: rgb(63, 60, 60);
+
+figure{
+  width: 100%;
+  height: 100%;
+}
+figure img{
+  width: 100%;
+  margin: 0 auto;
+  height: 80%;
+}
+
+figcaption{
+  height: 20%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 9px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: black;
+}
+
+.menu-grid-items:hover{
+  background-color: rgb(61, 78, 72);
+  color: white;
   cursor: pointer;
 }
 
-.game-home-menu-grid-container{
-  border: 3px solid grey;
-  background-color: blue;
-  width: 80%;
-  height: 80%;
-  min-height: 70vh;
-  padding: 20px;
-  margin: 35px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  overflow: scroll;
-}
-
-.phone-menu-grid-container{
-  background-color: blueviolet;
-  border: 3px solid grey;
-  width: 80%;
-  height: 80%;
-  min-height: 70vh;
-  padding: 20px;
-  margin: 35px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  overflow: scroll;
-}
-
-.casino-grid-container{
-  background-color: aquamarine;
-  color: black;
-  border: 3px solid grey;
-  width: 80%;
-  height: 80%;
-  min-height: 70vh;
-  padding: 20px;
-  margin: 35px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  overflow: scroll;
-}
-
 .guessing-game-container{
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  padding: 25px;
+  text-align: center;
   background-color: aliceblue;
   color: black;
-  width: 80%;
-  height: 80%;
-  height: 70vh;
-  min-height: 70vh;
-  padding: 20px;
-  margin: 35px auto;
-  text-align: center;
 }
 
 .divider{
   border-bottom: 1px solid black;
-  margin: 30px auto;
+  margin: 20px;
 }
- 
+
 .play-game{
-  width: 40%;
   border: none;
+  background-color: brown;
+  color: white;
+  width: 30%;
+  padding: 5px 20px;
   border-radius: 10px;
-  padding: 10px 20px;
-  color: brown;
-  background-color: blueviolet;
-  font-size: 20px;
-  margin-bottom: 15px;
+}
+
+.inactive-menu{
+  display: none;
 }

@@ -2,14 +2,14 @@
 // -------------------------------------------
 
 let getUserName = document.querySelector('.username');
-
+let userInfoBlock = document.getElementById('user-info');
 let submitUserNameBtn = document.querySelector('.submit-user-info-btn');
-
 let updateUserName = document.getElementById('username');
 
 submitUserNameBtn.addEventListener('click', () => {
   updateUserName.innerHTML = getUserName.value;
   getUserName.value = '';
+  userInfoBlock.style.display = 'none';
 })
 
 // -------------------------------------------
@@ -110,7 +110,64 @@ updateDays.innerHTML = currentDay;
 }, 1000);
 
 // -------------------------------------------
+// Menu manipultion
 
+const mainMenuBlock = document.getElementById('main-menu-block');
+const locationsMenuBlock = document.getElementById('locations-menu-block');
+const phoneMenuBlock = document.getElementById('phone-menu-block');
+const casinoMenuBlock = document.getElementById('casino-menu-block');
+const guessingGameBlock = document.getElementById('guessing-game-block');
+
+
+let goToLocations = document.getElementById('locations');
+let goToMainMenu = document.getElementById('main-menu');
+let goToCasino = document.getElementById('casino');
+let goToGuessingGame = document.getElementById('guess-number-game');
+let goBackToMainMenu = document.querySelectorAll('.return-to-main-menu');
+let goToPhoneMenu = document.getElementById('phone');
+
+
+goToMainMenu.addEventListener('click', () => {
+  mainMenuBlock.classList.remove('inactive-menu');
+  locationsMenuBlock.classList.add('inactive-menu');
+  casinoMenuBlock.classList.add('inactive-menu');
+  guessingGameBlock.classList.add('inactive-menu');
+});
+
+goBackToMainMenu.forEach(icon => {
+  icon.addEventListener('click', () => {
+    mainMenuBlock.classList.remove('inactive-menu');
+    locationsMenuBlock.classList.add('inactive-menu');
+    casinoMenuBlock.classList.add('inactive-menu');
+    guessingGameBlock.classList.add('inactive-menu');
+    phoneMenuBlock.classList.add('inactive-menu');
+  });
+});
+
+goToPhoneMenu.addEventListener('click', () => {
+  phoneMenuBlock.classList.remove('inactive-menu');
+  mainMenuBlock.classList.add('inactive-menu');
+})
+
+goToLocations.addEventListener('click', () => {
+  locationsMenuBlock.classList.remove('inactive-menu');
+  mainMenuBlock.classList.add('inactive-menu');
+});
+
+goToCasino.addEventListener('click', () => {
+  casinoMenuBlock.classList.remove('inactive-menu');
+  locationsMenuBlock.classList.add('inactive-menu');
+});
+
+goToGuessingGame.addEventListener('click', () => {
+  guessingGameBlock.classList.remove('inactive-menu');
+  casinoMenuBlock.classList.add('inactive-menu');
+})
+// -------------------------------------------
+
+
+
+// -------------------------------------------
 
 let accountBalance = 1000;
 //let hygineLevel = 90;
@@ -120,9 +177,9 @@ let accountBalance = 1000;
 //let restLevel = 80;
 //let popularity = 0;
 //let socialLife = 0;
-//let selfConfidence = 0;
+//let selfEsteem = 0;
 //let numberOfFriends = 0;
-//let criminality = 0;
+//let criminalityLevel = 0;
 //let relationshipStatus = 'single';
 //let employmentStatus = 'unemployed';
 //let workXp = 0;
