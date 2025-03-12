@@ -110,14 +110,15 @@ updateDays.innerHTML = currentDay;
 }, 1000);
 
 // -------------------------------------------
-// Menu manipultion
+// Menu Navigation
 
 const mainMenuBlock = document.getElementById('main-menu-block');
 const locationsMenuBlock = document.getElementById('locations-menu-block');
 const phoneMenuBlock = document.getElementById('phone-menu-block');
 const casinoMenuBlock = document.getElementById('casino-menu-block');
 const guessingGameBlock = document.getElementById('guessing-game-block');
-
+const investmentMenuBlock = document.getElementById('investment-menu-block');
+const cryptoInvestmentBlock = document.getElementById('crypto-block');
 
 let goToLocations = document.getElementById('locations');
 let goToMainMenu = document.getElementById('main-menu');
@@ -125,7 +126,9 @@ let goToCasino = document.getElementById('casino');
 let goToGuessingGame = document.getElementById('guess-number-game');
 let goBackToMainMenu = document.querySelectorAll('.return-to-main-menu');
 let goToPhoneMenu = document.getElementById('phone');
-
+let goToInvestment = document.getElementById('investment');
+let goToCryptoInvest = document.getElementById('crypto-investment');
+let exitCryptoPage = document.getElementById('exit-crypto-page-btn');
 
 goToMainMenu.addEventListener('click', () => {
   mainMenuBlock.classList.remove('inactive-menu');
@@ -141,6 +144,7 @@ goBackToMainMenu.forEach(icon => {
     casinoMenuBlock.classList.add('inactive-menu');
     guessingGameBlock.classList.add('inactive-menu');
     phoneMenuBlock.classList.add('inactive-menu');
+    investmentMenuBlock.classList.add('inactive-menu');
   });
 });
 
@@ -162,6 +166,21 @@ goToCasino.addEventListener('click', () => {
 goToGuessingGame.addEventListener('click', () => {
   guessingGameBlock.classList.remove('inactive-menu');
   casinoMenuBlock.classList.add('inactive-menu');
+})
+
+goToInvestment.addEventListener('click', () => {
+  phoneMenuBlock.classList.add('inactive-menu');
+  investmentMenuBlock.classList.remove('inactive-menu');
+})
+
+goToCryptoInvest.addEventListener('click', () => {
+  investmentMenuBlock.classList.add('inactive-menu');
+  cryptoInvestmentBlock.classList.remove('inactive-menu');
+})
+
+exitCryptoPage.addEventListener('click', () => {
+  cryptoInvestmentBlock.classList.add('inactive-menu');
+  investmentMenuBlock.classList.remove('inactive-menu');
 })
 // -------------------------------------------
 
@@ -239,4 +258,91 @@ while (tries <= 1) {
 // -------------------------------------------------------
 
 //console.log(currentMonth);
+
+// crypto investment test
+let cryptoInvestmentAmount = 100;
+let cryptBalance = 0;
+let changes = 0;
+let mafChanges = 0;
+let bteChanges = 0;
+
+
+
+
+let updateCryptoBalance = document.getElementById('crypto-balance');
+let updateMafPercentChange = document.getElementById('maf-changes-24hr');
+let updateBtePercentChange = document.getElementById('bte-changes-24hr');
+let updateBtePrice = document.getElementById('bte-latest-price');
+let updateMafPercentageDisplay = document.querySelector('.maf-percent-changes');
+let updateBtePercentageDisplay = document.querySelector('.bte-percent-changes');
+let updateMafPrice = document.getElementById('maf-latest-price');
+
+const investmentLoop = setInterval(() => {
+  
+  let randomCryptoChange = Math.floor(Math.random() * 100) + 1;
+  
+  let percentMafChange = 0;
+  let percentBteChange = 0;
+  let percentChange = 0;
+  let mafCoinCost = 29000;
+  let bteCoinCost = 180;
+
+  if ((randomCryptoChange >= 1 && randomCryptoChange < 25) || (randomCryptoChange >= 50 && randomCryptoChange < 75)) {
+    percentChange += (cryptoInvestmentAmount * 0.01);
+    cryptBalance = (cryptoInvestmentAmount += percentChange);
+    changes += percentChange;
+
+    percentMafChange -= (mafCoinCost * 0.0001);
+    mafChanges += percentMafChange;
+
+    percentBteChange += (bteCoinCost * 0.009);
+    bteChanges += percentBteChange;
+
+
+  } else if ((randomCryptoChange >= 25 && randomCryptoChange < 50) || (randomCryptoChange >= 75 && randomCryptoChange <= 100))
+    {
+
+    percentChange -= (cryptoInvestmentAmount * 0.01);
+    cryptBalance = (cryptoInvestmentAmount += percentChange);
+    changes += percentChange;
+
+    percentMafChange += (mafCoinCost * 0.0001);
+    mafChanges += percentMafChange;
+
+    percentBteChange -= (bteCoinCost * 0.009);
+    bteChanges += percentBteChange;
+  }
+  
+  updateMafPercentChange.innerHTML = `${mafChanges.toFixed(2)}`
+  updateBtePercentChange.innerHTML = `${bteChanges.toFixed(2)}`
+  updateMafPrice.innerHTML = `${(mafCoinCost += mafChanges).toFixed(2)}`;
+  updateBtePrice.innerHTML = `${(bteCoinCost += bteChanges).toFixed(2)}`
+  updateCryptoBalance.innerHTML = `$${cryptBalance.toFixed(2)}`;
+
+  if (mafChanges < 0) {
+    updateMafPercentageDisplay.style.backgroundColor = 'red';
+    }
+    else if (mafChanges > 0) {
+    updateMafPercentageDisplay.style.backgroundColor = 'green';
+   } else{
+    updateMafPercentageDisplay.style.backgroundColor = 'grey';
+  }
+
+  if (bteChanges < 0) {
+    updateBtePercentageDisplay.style.backgroundColor = 'red';
+    }
+    else if (bteChanges > 0) {
+    updateBtePercentageDisplay.style.backgroundColor = 'green';
+   } else{
+    updateBtePercentageDisplay.style.backgroundColor = 'grey';
+  }
+  //console.log(`${(mafCoinCost += changes).toFixed(2)}`)
+  //console.log(changes.toFixed(2));
+  //console.log(cryptBalance);
+  //console.log(percentChange);
+  //console.log(randomCryptoChange);
+  //console.log(mafCoinCost);
+
+
+}, 1000);
 

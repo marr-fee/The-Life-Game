@@ -228,7 +228,7 @@
             <figcaption>CONTACTS</figcaption>
           </figure>
         </div>
-        <div class="menu-grid-items">
+        <div class="menu-grid-items" id="investment">
           <figure class="icons">
             <img src="images\icons8-investment-50.png" />
             <figcaption>INVESTMENT</figcaption>
@@ -308,6 +308,76 @@
         >
           Play
         </button>
+      </div>
+
+      <!-- INVESTMENT BLOCK -->
+      <div
+        class="investment-grid-container investment-menu inactive-menu"
+        id="investment-menu-block"
+      >
+        <div class="menu-grid-items return-to-main-menu">
+          <figure class="icons">
+            <img src="images\icons8-return-100.png" />
+            <figcaption>MAIN MENU</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items" id="crypto-investment">
+          <figure class="icons">
+            <img src="images\icons8-crypto-40.png" />
+            <figcaption>CRYPTO</figcaption>
+          </figure>
+        </div>
+        <div class="menu-grid-items" id="real-estate-investment">
+          <figure class="icons">
+            <img src="images\icons8-real-estate-50.png" />
+            <figcaption>REAL ESTATE</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div
+        class="crypto-invest-container crypto-investment-block inactive-menu"
+        id="crypto-block"
+      >
+        <h1>Crypto Market</h1>
+        <div class="divider"></div>
+        <div class="crypto-balance-add-div">
+          <span id="crypto-balance">0.00</span>
+          <div>
+            <button class="add-funds-button" id="add-funds-btn">
+              Add Funds</button
+            ><button class="withdraw-button" id="withdraw-btn">Withdraw</button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="labels">
+          <span class="coin">coins</span
+          ><span class="last-price">last price</span
+          ><span class="per-change">% change</span>
+        </div>
+        <div class="coins-line-up">
+          <div class="maf-coin coins">
+            <div class="coin-names">
+              <span id="coin-name">MAF</span
+              ><span class="coin-sub-name">/USDC</span>
+            </div>
+            <span id="maf-latest-price">0.00</span>
+            <div class="maf-percent-changes">
+              <span id="maf-changes-24hr">0.00</span>%
+            </div>
+          </div>
+          <div class="bte-coin coins">
+            <div class="coin-names">
+              <span id="coin-name">BTE</span
+              ><span class="coin-sub-name">/USDC</span>
+            </div>
+            <span id="bte-latest-price">0.00</span>
+            <div class="bte-percent-changes">
+              <span id="bte-changes-24hr">0.00</span>%
+            </div>
+          </div>
+        </div>
+        <button class="exit-button" id="exit-crypto-page-btn">Exit</button>
       </div>
     </div>
 

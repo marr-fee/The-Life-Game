@@ -38,7 +38,7 @@ span{
   top: 0;
 }
 
-.main-menu-grid-container, .locations-grid-container, .casino-grid-container, .phone-menu-grid-container{
+.main-menu-grid-container, .locations-grid-container, .casino-grid-container, .phone-menu-grid-container, .investment-grid-container{
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
@@ -110,9 +110,124 @@ figcaption{
   color: black;
 }
 
+.crypto-invest-container{
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  padding: 25px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.crypto-balance-add-div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.labels{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+  padding: 0;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+.coins{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+.last-price, .per-change{
+  flex: 1;
+  margin-right: -10px;
+  padding: 0;
+
+}
+.coin-names, .coin{
+  flex: 3;
+  text-align: left;
+}
+#latest-price{
+  flex: 1;
+}
+#percent-changes{
+  flex: 1;
+  border: none;
+  padding: 3px 0;
+  border-radius: 5px;
+  background-color: grey;
+  color: white;
+}
+
+.coin-sub-name{
+  font-size: 12px;
+  color: grey;
+}
+
+#bte-latest-price, #maf-latest-price{
+  padding-right: 15px;
+}
+
+.bte-percent-changes, .maf-percent-changes{
+  padding: 4px 6px;
+  width: 80px;
+  border-radius: 5px;
+  color: white;
+
+}
+.add-funds-button{
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(252, 197, 16);
+}
+
+.add-funds-button:hover{
+  background-color: orange;
+  cursor: pointer;
+}
+
+.withdraw-button{
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(2, 92, 6);
+  margin-left: 10px;
+  color: white;
+}
+
+.withdraw-button:hover{
+  background-color: green;
+  cursor: pointer;
+}
+
+.exit-button{
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 25%;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(9, 17, 32);
+  margin-left: 10px;
+  color: white;
+}
+.exit-button:hover{
+  cursor: pointer;
+  background-color: rgb(52, 52, 97);
+}
+#crypto-balance{
+  font-size: 30px;
+}
+
 .divider{
   border-bottom: 1px solid black;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .play-game{
