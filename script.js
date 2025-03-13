@@ -129,6 +129,15 @@ let goToPhoneMenu = document.getElementById('phone');
 let goToInvestment = document.getElementById('investment');
 let goToCryptoInvest = document.getElementById('crypto-investment');
 let exitCryptoPage = document.getElementById('exit-crypto-page-btn');
+let addFundsBlock = document.getElementById('add-funds-block')
+let addFundsBtn = document.getElementById('add-funds-btn');
+let returnToAddFundsBlockBtn = document.getElementById('return-to-crypto-block')
+let mafInvestmentAmountInput = document.getElementById('maf-investment-amount');
+let bteInvestmentAmountInput = document.getElementById('bte-investment-amount');
+let buyMafCoin = document.getElementById('buy-maf-coin');
+let buyBteCoin = document.getElementById('buy-bte-coin');
+
+
 
 goToMainMenu.addEventListener('click', () => {
   mainMenuBlock.classList.remove('inactive-menu');
@@ -181,6 +190,14 @@ goToCryptoInvest.addEventListener('click', () => {
 exitCryptoPage.addEventListener('click', () => {
   cryptoInvestmentBlock.classList.add('inactive-menu');
   investmentMenuBlock.classList.remove('inactive-menu');
+})
+
+addFundsBtn.addEventListener('click', () => {
+  addFundsBlock.classList.remove('inactive-menu');
+})
+
+returnToAddFundsBlockBtn.addEventListener('click', () => {
+  addFundsBlock.classList.add('inactive-menu');
 })
 // -------------------------------------------
 
@@ -260,11 +277,12 @@ while (tries <= 1) {
 //console.log(currentMonth);
 
 // crypto investment test
-let cryptoInvestmentAmount = 100;
+let cryptoInvestmentAmount = 0;
 let cryptBalance = 0;
 let changes = 0;
 let mafChanges = 0;
 let bteChanges = 0;
+
 
 
 
@@ -276,6 +294,27 @@ let updateBtePrice = document.getElementById('bte-latest-price');
 let updateMafPercentageDisplay = document.querySelector('.maf-percent-changes');
 let updateBtePercentageDisplay = document.querySelector('.bte-percent-changes');
 let updateMafPrice = document.getElementById('maf-latest-price');
+let updatePurchaseMsg = document.getElementById('coin-purchace-msg');
+buyMafCoin.addEventListener('click', () => {
+
+  accountBalance -= Number(mafInvestmentAmountInput.value);
+  updateAccountBalance.innerText = accountBalance;
+   updatePurchaseMsg.innerText = `$${mafInvestmentAmountInput.value} successfully added.`
+  cryptoInvestmentAmount += Number(mafInvestmentAmountInput.value);
+  mafInvestmentAmountInput.value = "";
+ 
+  console.log(cryptoInvestmentAmount);
+});
+
+buyBteCoin.addEventListener('click', () => {
+  accountBalance -= Number(bteInvestmentAmountInput.value);
+  updateAccountBalance.innerText = accountBalance;
+   updatePurchaseMsg.innerText = `$${bteInvestmentAmountInput.value} successfully added.`
+  cryptoInvestmentAmount += Number(bteInvestmentAmountInput.value);
+
+  bteInvestmentAmountInput.value = "";
+  
+});
 
 const investmentLoop = setInterval(() => {
   

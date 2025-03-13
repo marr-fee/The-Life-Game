@@ -339,6 +339,49 @@
         class="crypto-invest-container crypto-investment-block inactive-menu"
         id="crypto-block"
       >
+        <div class="add-funds-div inactive-menu" id="add-funds-block">
+          <h1>Crypto Market</h1>
+          <div class="divider"></div>
+          <div class="coins-line-up">
+            <div class="maf-coin coins">
+              <div class="coin-names">
+                <span id="coin-name">MAF</span
+                ><span class="coin-sub-name">/USDC</span>
+              </div>
+              $
+              <span id="maf-price">0.00</span>
+              <div class="buy-coin">
+                <input
+                  type="number"
+                  min="20"
+                  max="1000000"
+                  id="maf-investment-amount"
+                />
+
+                <button id="buy-maf-coin" class="buy-btn">Buy</button>
+              </div>
+            </div>
+            <div class="bte-coin coins">
+              <div class="coin-names">
+                <span id="coin-name">BTE</span
+                ><span class="coin-sub-name">/USDC</span>
+              </div>
+              $
+              <span id="bte-price">0.00</span>
+              <div class="buy-coin">
+                <input
+                  type="number"
+                  min="20"
+                  max="1000000"
+                  id="bte-investment-amount"
+                />
+                <button id="buy-bte-coin" class="buy-btn">Buy</button>
+              </div>
+            </div>
+          </div>
+          <p id="coin-purchace-msg"></p>
+          <button id="return-to-crypto-block" class="exit-button">Back</button>
+        </div>
         <h1>Crypto Market</h1>
         <div class="divider"></div>
         <div class="crypto-balance-add-div">

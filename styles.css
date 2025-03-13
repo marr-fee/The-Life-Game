@@ -242,3 +242,30 @@ figcaption{
 .inactive-menu{
   display: none;
 }
+
+.add-funds-div{
+  position: absolute;
+  background-color: rgb(58, 58, 58);
+  width: 90%;
+  height: 90%;
+  color: white;
+  padding: 20px;
+  align-items: center;
+}
+
+.buy-coin{
+  width: 40%;
+
+}
+
+.buy-coin input{
+  padding: 3px 0 3px 10px;
+}
+
+.buy-coin button{
+  padding: 5px 25px;
+  border: none;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}
